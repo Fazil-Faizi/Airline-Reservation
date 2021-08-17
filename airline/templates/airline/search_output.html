@@ -1,0 +1,8 @@
+{% extends "airline/base.html" %}
+{% block content %}
+  {% if searched %}
+    <h1>You serached for</h1>
+  {%else%}
+    <h1>You forgot to search</h1>
+  {% endif %}
+{% endblock content %}

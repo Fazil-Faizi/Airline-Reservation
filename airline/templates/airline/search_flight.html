@@ -1,0 +1,14 @@
+{% extends "airline/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form method='POST' action=''>{% csrf_token %}
+    {{form|crispy}}
+        <input type="submit" value='Search'/>
+</form>
+<br>
+{%for flight in flights%}
+  {{flight}}{{" " }}{{flight.price}}<a href="{% url 'search-output'%}">Select</a><br><br>
+{%endfor%}
+
+
+{% endblock content %}
